@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <title>Создание лекции</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style type="text/css">
+        body {
+            padding-top: 80px;
+            padding-bottom: 40px;
+        }
+
+        p.active {
+            background-color: #428bca;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top header-color" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <h3 class="text-muted header-color">Приложение для создания электронных ресурсов</h3>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+            <div class="list-group">
+                <p class="list-group-item active">Действия</p>
+                <a href="office.html" class="list-group-item">Личный кабинет</a>
+                <a href="createcourse.html" class="list-group-item">Создать курс</a>
+                <a href="createtest.html" class="list-group-item">Создать тест</a>
+                <a href="index.html" class="list-group-item">Выйти</a>
+            </div>
+
+            <div class="list-group">
+                <p class="list-group-item active">Лекции выбранного курса</p>
+
+                <p class="list-group-item">1. Биологическая картина мира</p>
+                <p class="list-group-item">2. Эволюция</p>
+                <p class="list-group-item">3. Одноклеточные</p>
+
+            </div>
+        </div>
+
+        <div class="col-md-9">
+
+            <div class="jumbotron">
+
+                <ul class="nav nav-pills">
+                    <li><a href="createlecture_title">Название</a></li>
+                    <li class="active"><a href="createlecture_content">Содержание</a></li>
+                    <li><a href="createlecture_tasks">Задачи</a></li>
+                    <li><a href="createlecture_sources">Список источников</a></li>
+                </ul>
+
+                <h2>Создание лекции</h2>
+                <form role="form" method="post" action="createlecture.html">
+                    <div class="form-group">
+                        <label for="chooseCouse">Выберите курс</label>
+                        <select class="form-control" id="chooseCouse">
+                            <option>Общий курс биологии</option>
+                            <option>Экономическая теория</option>
+                        </select>
+                        <label for="titleLecture">Название лекции</label>
+                        <input type="text" class="form-control" id="titleLecture">
+                        <label for="lecture">Содержание лекции</label>
+                        <textarea type="text" class="form-control" id="lecture" rows="15">
+
+                        </textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Создать лекцию</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+<hr>
+
+<footer class="text-center">
+    <p>&copy; ФМИТ, 2014</p>
+</footer>
+
+</div>
+
+</body>
+</html>

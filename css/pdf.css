@@ -1,0 +1,21 @@
+.text-center{
+    text-align: center;
+}
+
+table{
+    /*display: block;
+    height: 1000px;*/
+    width: 100%;
+}
+
+td{
+    height: 333px;
+}
+
+.cell-first{
+    vertical-align: top;
+}
+
+.cell-third{
+    vertical-align: bottom;
+}
