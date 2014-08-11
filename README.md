@@ -1,3 +1,5 @@
 php-books
 =========
-Powered by Codeigniter
+- Powered by Codeigniter
+
+- Created by Ksenia Kipaykina
