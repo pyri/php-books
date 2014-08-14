@@ -6,11 +6,17 @@ class CourseUnAuth extends CI_Controller {
         $this->load->model('course_model');
         $course = $this->course_model->getCourseAndLecture($course_id);
         $test = $this->course_model->getOneTestForCourseId($course_id);
-        $questions = $this->course_model->getQuestionsByTestId($test[0]['test_id']);
-
-        foreach ($questions as $key => $question) {
-            $questions[$key]['answers'] = $this->course_model->getAnswersByQuestionId($question['id']);
-        }
+        
+		if(!empty($test)){
+			$questions = $this->course_model->getQuestionsByTestId($test[0]['test_id']);
+			
+			foreach ($questions as $key => $question) {
+				$questions[$key]['answers'] = $this->course_model->getAnswersByQuestionId($question['id']);
+			}
+		}
+		else {$questions = '';}
+		
+ 
 
         $data = array(
         'course' => $course,

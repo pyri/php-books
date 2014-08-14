@@ -53,6 +53,9 @@ class Course extends MY_Controller {
 	public function read($course_id)
     {
         $msg = '';
+		$msg_error = '';
+		$msg_success = '';
+		
 		$this->load->model('course_model');
         $course = $this->course_model->getCourseAndLecture($course_id);
         $test = $this->course_model->getOneTestForCourseId($course_id);
@@ -100,10 +103,15 @@ class Course extends MY_Controller {
                 }
             }
 
-            $msg = 'Создана pdf-версия курса';
-            $this->session->set_flashdata('msg',  $msg);
             $file_name = translit($textbook[0]['c_title']).'.pdf';
-            $this->pdf->generateCourse($file_name, $textbook, $testCourse, $questions);
+            $result = $this->pdf->generateCourse($file_name, $textbook, $testCourse, $questions);
+            if ($result) {
+                $msg_success = 'Создана pdf-версия курса';
+
+            } else {
+                $msg_error = 'Ошибка при создании файла. Закройте pdf-файл, в который необходимо записать документ';
+            }
+            $this->session->set_flashdata('msg',  $msg);
         }
 
         if(isset($_POST['course_publish'])) {
@@ -116,7 +124,8 @@ class Course extends MY_Controller {
             'course' => $course,
             'course_id' => $course_id,
             'test' => $test,
-            'msg' => $msg,
+            'msg_error' => $msg_error,
+            'msg_success' => $msg_success,
             'page_title' => $course['0']['c_title']);
         $template['content'] = 'course/read';
         $template['sidebar'] = 'blocks/sidebar/short';
