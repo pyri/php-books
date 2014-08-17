@@ -6,7 +6,7 @@
         <div class="panel-body">
             <ol>
                 <?php foreach($list_lectures as $lecture):?>
-                    <a href="<?=base_url().'lecturelectureUnAuth/read/'.$lecture->id;?>">
+                    <a href="<?=base_url().'lectureUnAuth/read/'.$lecture->id;?>">
                         <li class="panel"><?=$lecture->title;?></li>
                     </a>
                 <?php endforeach;?>

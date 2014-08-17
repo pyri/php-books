@@ -29,8 +29,10 @@
     </form>
 
 
-    <?php if (!empty($msg)) :?>
-        <div class="alert alert-success"><?=$msg; ?></div>
+    <?php if (!empty($msg_success)):?>
+        <div class="alert alert-success"><?=$msg_success; ?></div>
+    <?php elseif (!empty($msg_error)):?>
+       <div class="alert alert-danger"><?=$msg_error; ?></div>
     <?php endif; ?>
 	<div class="lecture">
 
