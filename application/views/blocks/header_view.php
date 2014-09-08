@@ -2,7 +2,7 @@
 <div class="navbar navbar-inverse navbar-fixed-top header-color" role="navigation">
     <div class="container">
         <div class="navbar-header">
-            <h3 class="text-muted header-color">Приложение для создания электронных учебных ресурсов</h3>
+            <h3 class="text-muted header-color">Создание и поддержка электронных учебных ресурсов</h3>
         </div>
         <?php $session_user_id = $this->session->userdata('user_id');?>
         <?php $session_username = $this->session->userdata('username');?>
